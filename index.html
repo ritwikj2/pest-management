@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resi Bootstrap Template</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/responsive-slider.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      align-items: center;
+      grid-gap: 15px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 25px;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 25px;
+    }
+
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    .flip-card-front img {
+      border-radius: 25px;
+    }
+
+    .flip-card-back {
+      background-color: #d1e6df;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-back p {
+      font-size: 25px;
+    }
+
+    .text-block {
+      position: absolute;
+      background-color: transparent;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .text-block h4 {
+      color: white;
+    }
+
+    .search-btn {
+      text-decoration: none;
+      background-color: #6D9C91;
+      display: inline;
+      text-align: center;
+      font-size: 25px;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .search-btn:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <div class="navbar-brand">
+                <a href="/">
+                  <h1>Pest Management</h1>
+                </a>
+              </div>
+            </div>
+            <div class="menu">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="index.html">Home</a></li>
+                <li role="presentation"><a href="dealer.php">Nearest Dealer</a></li>
+                <li role="presentation"><a href="search1.php">Search Pesticide</a></li>
+                <li role="presentation"><a href="user.php">My Pesticide</a></li>
+                <li role="presentation"><a href="aboutus.html">About Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="slider">
+    <div id="about-slider">
+      <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators visible-xs">
+          <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-slider" data-slide-to="1"></li>
+          <li data-target="#carousel-slider" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="/images/car1.jpg" class="img-responsive" alt="">
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                <h2><span>Cheap. Available. Efficient.</span></h2>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                  <p>Find everything you need, in one place.</p>
+                </div>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <a href="dealer.php" class="btn btn-primary btn-lg btn-getnow">Find your nearest dealer</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/images/car2.jpg" class="img-responsive" alt="">
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+                <h2>Everything you need to know about pesticides</h2>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                  <p>Click to know more.</p>
+                </div>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <a href="/aboutus.html" target="_blank" class="btn btn-primary btn-lg btn-getnow">Know more</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+      <!--/#carousel-slider-->
+    </div>
+    <!--/#about-slider-->
+  </div>
+  <!--/#slider-->
+
+
+
+  <div class="content">
+    <h2><span>Uses of pesticides</span></h2>
+    <p>Pesticides are used to control organisms that are considered to be harmful. For example, they are used to kill
+      mosquitoes that can transmit potentially deadly diseases like West Nile virus, yellow fever, and malaria. They can
+      also kill bees, wasps or ants that can cause allergic reactions. Insecticides can protect animals from illnesses
+      that can be caused by parasites such as fleas. Pesticides can prevent sickness in humans that could be caused
+      by moldy food or diseased produce.</p>
+  </div>
+  <div class="breadcrumb">
+    <h4>Our Services</h4>
+  </div>
+
+  <div class="grid" style="margin-top: 50px;">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/pesticide1.jpg" alt="Avatar" style="width:300px;height:300px;">
+          <div class="text-block"
+            style="top:225px; right: 50px !important; border: 2px; max-width: 500px; border: 2px solid white;">
+            <h4><strong>Presticide Usage</strong></h4>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>Presticide Usage</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a class="search-btn" href="usage.php">Click Here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/pesticide2.jpg" alt="Avatar" style="width:300px;height:300px;">
+          <div class="text-block"
+            style="top:225px; right: 25px !important; border: 2px; max-width: 500px; border: 2px solid white;">
+            <h4><strong>Find Nearest Dealer</strong></h4>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>Find Nearest Dealer</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a class="search-btn" href="dealer.php">Click here</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/pesticide3.jpg" alt="Avatar" style="width:300px;height:300px;">
+          <div class="text-block"
+            style="top:225px; right: 50px !important; border: 2px; max-width: 500px; border: 2px solid white;">
+            <h4><strong>Search Pesticide</strong></h4>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>Search Pesticide</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a class="search-btn" href="search1.php">Click here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/pesticide4.jpg" alt="Avatar" style="width:300px;height:300px;">
+          <div class="text-block"
+            style="top:225px; right: 65px !important; border: 2px; max-width: 500px; border: 2px solid white;">
+            <h4><strong>My Pesticide</strong></h4>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p>My Pesticide</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a class="search-btn" href="user.php">Click here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="breadcrumb" style="margin-top: 70px;">
+    <h4>About Us</h4>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+          <img src="/images/pesticide1.jpg" alt="" class="img-responsive" style="border-radius: 25px;">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
+          <div class="list-group-item" style="margin-top: 50px;">
+            <h4 class="list-group-item-heading">Modern interface</h4>
+            <p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas
+              molestias
+            </p>
+          </div>
+          <div class="list-group-item" style="margin-top: 50px;">
+            <h4 class="list-group-item-heading">Modern interface</h4>
+            <p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas
+              molestias
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+          <div class="list-group">
+            <div class="list-group-item" style="margin-top: 200px;">
+              <h4 class="list-group-item-heading">Easy customize</h4>
+              <p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                molestias
+              </p>
+            </div>
+            <div class="list-group-item" style="margin-top: 50px;">
+              <h4 class="list-group-item-heading">Modern design</h4>
+              <p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                molestias
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="image">
+          <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
+            <img src="/images/home.jpeg" alt="" class="img-responsive" style="border-radius: 25px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <!--start footer-->
+  <footer>
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-network">
+              <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+              <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+              <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
+              <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
+              <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright">
+              <div class="credits">
+                <p style="color: white;"><strong>Designed by Jayesh, Ritwik and Dhanush</strong></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--end footer-->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/responsive-slider.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    wow = new WOW({}).init();
+  </script>
+
+</body>
+
+</html>
