@@ -1,11 +1,5 @@
-/*
-    Theme Name: Resi
-    Theme URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-*/
 /* ==== Google font ==== */
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 /* === fontawesome === */
 @import url('font-awesome.css');
 /* ==== overwrite bootstrap standard ==== */
@@ -15,7 +9,7 @@
 
 
 body {
-	font-family:'Open Sans', Arial, sans-serif;
+	font-family: 'Nunito', sans-serif !important;
 	font-size:14px;
 	font-weight:300;
 	line-height:1.6em;

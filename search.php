@@ -15,6 +15,8 @@ include('connection.php');
 	<link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <title>Pest Management</title>
 	<!--<link rel="stylesheet" type="text/css" href="stylesheet.php">-->
 </head>
 <!--<body class="center">
@@ -37,6 +39,33 @@ include('connection.php');
 
 </body>
 -->
+
+<style>
+
+  body {
+      font-family: 'Nunito', sans-serif;
+    }
+  .search-btn {
+      padding: 10px 20px;
+      font-size: 15px;
+      background: #fff;
+      color: #272727;
+      border-radius: 0;
+      text-transform: uppercase;
+      border: 1px solid #6d9c91;
+  }
+
+  .search-btn:hover {
+      color: #fff;
+      border-color: #fff;
+      background: #6d9c91;
+      -webkit-transition: color 300ms, background-color 300ms;
+      -moz-transition: color 300ms, background-color 300ms;
+      -o-transition: color 300ms, background-color 300ms;
+      transition: color 300ms, background-color 300ms;
+  }
+
+</style>
 <body>
 
 <header>
@@ -52,11 +81,11 @@ include('connection.php');
               </div>
             </div>
             <div class="menu">
-              <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="index.html">Home</a></li>
-                <li role="presentation"><a href="nearestdealer.html">Nearest Dealer</a></li>
-                <li role="presentation"><a href="searchpesticide.html">Search Pesticide</a></li>
-                <li role="presentation"><a href="mypesticide.html">My Pesticide</a></li>
+                <li role="presentation"><a href="dealer.php">Nearest Dealer</a></li>
+                <li role="presentation"><a href="search1.php">Search Pesticide</a></li>
+                <li role="presentation"><a href="user.php">My Pesticide</a></li>
                 <li role="presentation"><a href="aboutus.html">About Us</a></li>
               </ul>
             </div>
@@ -67,8 +96,10 @@ include('connection.php');
   </header>
 
 <div class="container">
-	<div style="background-color: #ccff99;margin-bottom:20px;">
-		<h3 style="margin-left:499px; font-family: times new roman;font-size: 30px; ">Search Pesticide</h3> 
+  <center>
+	<div style="background-color: #6d9c91; margin-bottom:20px; padding: 15px; width: 300px;">
+  <h3 style="font-size: 30px; color: white;">Search Pesticide</h3> 
+      </center>
 	</div>
 	
 	
@@ -79,7 +110,7 @@ include('connection.php');
 	echo "<div style=\"margin-top:40px;margin-left:200px;  \">";
 	echo "<form action='search.php' method=\"GET\">";
 	echo "<label for='type' style='font-size:20px; '>Select the pesticide type </label>";
-	echo "<select name='type' class=\"btn btn-danger dropdown-toggle\" style=\"margin-left:10px;\">";
+	echo "<select name='type' class=\"btn dropdown-toggle\" style=\"margin-left:10px;\">";
 	echo "</div>";
 	while($d=mysqli_fetch_array($result,MYSQLI_NUM))
 {
@@ -95,7 +126,7 @@ include('connection.php');
 
 <?php
 echo "<br>";
-echo "<input type=\"submit\" value=\"Search\"class=\"btn btn-dark\" style=\"margin-left:50px;\">";
+echo "<input type=\"submit\" value=\"Search\"class=\"search-btn\" style=\"margin-left:50px;\">";
 
 echo "</div>";
 echo ""."<br>"."</form>";

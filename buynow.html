@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pest Management</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/responsive-slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+
+        .card>hr {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .card>.list-group:first-child .list-group-item:first-child {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .card>.list-group:last-child .list-group-item:last-child {
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .card-body {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1.25rem;
+        }
+
+        .card-title {
+            margin-bottom: 0.75rem;
+        }
+
+        .card-subtitle {
+            margin-top: -0.375rem;
+            margin-bottom: 0;
+        }
+
+        .card-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-link:hover {
+            text-decoration: none;
+        }
+
+        .card-link+.card-link {
+            margin-left: 1.25rem;
+        }
+
+        .card-header {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .card-header:first-child {
+            border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+        }
+
+        .card-header+.list-group .list-group-item:first-child {
+            border-top: 0;
+        }
+
+        .card-footer {
+            padding: 0.75rem 1.25rem;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-top: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .card-footer:last-child {
+            border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+        }
+
+        .card-header-tabs {
+            margin-right: -0.625rem;
+            margin-bottom: -0.75rem;
+            margin-left: -0.625rem;
+            border-bottom: 0;
+        }
+
+        .card-header-pills {
+            margin-right: -0.625rem;
+            margin-left: -0.625rem;
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1.25rem;
+        }
+
+        .card-img {
+            width: 100%;
+            border-radius: calc(0.25rem - 1px);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 400px;
+            border-top-left-radius: calc(0.25rem - 1px);
+            border-top-right-radius: calc(0.25rem - 1px);
+        }
+
+        .card-img-bottom {
+            width: 100%;
+            border-bottom-right-radius: calc(0.25rem - 1px);
+            border-bottom-left-radius: calc(0.25rem - 1px);
+        }
+
+        .card-deck {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .card-deck .card {
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 576px) {
+            .card-deck {
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+
+            .card-deck .card {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex: 1 0 0%;
+                flex: 1 0 0%;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin-right: 15px;
+                margin-bottom: 0;
+                margin-left: 15px;
+            }
+        }
+
+        .card-group {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .card-group>.card {
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 576px) {
+            .card-group {
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+            }
+
+            .card-group>.card {
+                -ms-flex: 1 0 0%;
+                flex: 1 0 0%;
+                margin-bottom: 0;
+            }
+
+            .card-group>.card+.card {
+                margin-left: 0;
+                border-left: 0;
+            }
+
+            .card-group>.card:not(:last-child) {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .card-group>.card:not(:last-child) .card-img-top,
+            .card-group>.card:not(:last-child) .card-header {
+                border-top-right-radius: 0;
+            }
+
+            .card-group>.card:not(:last-child) .card-img-bottom,
+            .card-group>.card:not(:last-child) .card-footer {
+                border-bottom-right-radius: 0;
+            }
+
+            .card-group>.card:not(:first-child) {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .card-group>.card:not(:first-child) .card-img-top,
+            .card-group>.card:not(:first-child) .card-header {
+                border-top-left-radius: 0;
+            }
+
+            .card-group>.card:not(:first-child) .card-img-bottom,
+            .card-group>.card:not(:first-child) .card-footer {
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        .card-columns .card {
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 576px) {
+            .card-columns {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+                -webkit-column-gap: 1.25rem;
+                -moz-column-gap: 1.25rem;
+                column-gap: 1.25rem;
+                orphans: 1;
+                widows: 1;
+            }
+
+            .card-columns .card {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        .buy-now-button {
+            padding: 10px 20px;
+            font-size: 15px;
+            background: #fff;
+            color: #272727;
+            border-radius: 0;
+            text-transform: uppercase;
+            border: 1px solid #6d9c91;
+            float: right;
+        }
+
+        .buy-now-button:hover {
+            color: #fff;
+            border-color: #fff;
+            background: #6d9c91;
+            -webkit-transition: color 300ms, background-color 300ms;
+            -moz-transition: color 300ms, background-color 300ms;
+            -o-transition: color 300ms, background-color 300ms;
+            transition: color 300ms, background-color 300ms;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <div class="navbar-brand">
+                                <a href="/">
+                                    <h1>Pest Management</h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="index.html">Home</a></li>
+                                <li role="presentation"><a href="dealer.php">Nearest Dealer</a></li>
+                                <li role="presentation"><a href="search1.php">Search Pesticide</a></li>
+                                <li role="presentation"><a href="user.php">My Pesticide</a></li>
+                                <li role="presentation"><a href="aboutus.html">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row" style="margin-bottom: 30px;">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="/images/shop1.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/shop2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/shop3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 30px;">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="/images/shop1.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/shop2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/shop3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="buy-now-button">BUY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="buy-now-button" href="payment.html" style="margin-bottom: 30px;">Proceed to CheckOut</a>
+    </div>
+
+
+    <!--start footer-->
+    <footer>
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="social-network">
+                            <li><a href="#" data-placement="top" title="Facebook"><i
+                                        class="fa fa-facebook fa-1x"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a>
+                            </li>
+                            <li><a href="#" data-placement="top" title="Linkedin"><i
+                                        class="fa fa-linkedin fa-1x"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Pinterest"><i
+                                        class="fa fa-pinterest fa-1x"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Google plus"><i
+                                        class="fa fa-google-plus fa-1x"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="copyright">
+                            <div class="credits">
+                                <p style="color: white;"><strong>Designed by Jayesh, Ritwik and Dhanush</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end footer-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/responsive-slider.js"></script>
+    <script src="js/wow.min.js"></script>
+
+</body>
+
+</html>

@@ -19,27 +19,34 @@ include('connection.php');
 	<link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 
 </head>
 
 <style>
+  
+  body {
+      font-family: 'Nunito', sans-serif;
+    }
+  .search-btn {
+      padding: 10px 20px;
+      font-size: 15px;
+      background: #fff;
+      color: #272727;
+      border-radius: 0;
+      text-transform: uppercase;
+      border: 1px solid #6d9c91;
+  }
 
-.search-btn{
-	background-color: #6D9C91;
-	display:inline;
-	padding: 20px;
-	height: 60px;
-	text-align: center;
-	font-size: 25px;
-	color:white;
-	border-radius: 10px;
-}
-			
-.search-btn:hover
-{
-  background-color: #a1e3d4;
-  color: black;
-}
+  .search-btn:hover {
+      color: #fff;
+      border-color: #fff;
+      background: #6d9c91;
+      -webkit-transition: color 300ms, background-color 300ms;
+      -moz-transition: color 300ms, background-color 300ms;
+      -o-transition: color 300ms, background-color 300ms;
+      transition: color 300ms, background-color 300ms;
+  }
 
 </style>
 
@@ -58,11 +65,11 @@ include('connection.php');
               </div>
             </div>
             <div class="menu">
-              <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="index.html">Home</a></li>
-                <li role="presentation"><a href="nearestdealer.html">Nearest Dealer</a></li>
-                <li role="presentation"><a href="searchpesticide.html">Search Pesticide</a></li>
-                <li role="presentation"><a href="mypesticide.html">My Pesticide</a></li>
+                <li role="presentation"><a href="dealer.php">Nearest Dealer</a></li>
+                <li role="presentation"><a href="search1.php">Search Pesticide</a></li>
+                <li role="presentation"><a href="user.php">My Pesticide</a></li>
                 <li role="presentation"><a href="aboutus.html">About Us</a></li>
               </ul>
             </div>

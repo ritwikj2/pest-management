@@ -14,6 +14,33 @@ include "connection.php";
 	<link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+    .search-button {
+            padding: 10px 20px;
+            font-size: 15px;
+            background: #fff;
+            color: #272727;
+            border-radius: 0;
+            text-transform: uppercase;
+            border: 1px solid #6d9c91;
+        }
+
+        .search-button:hover {
+            color: #fff;
+            border-color: #fff;
+            background: #6d9c91;
+            -webkit-transition: color 300ms, background-color 300ms;
+            -moz-transition: color 300ms, background-color 300ms;
+            -o-transition: color 300ms, background-color 300ms;
+            transition: color 300ms, background-color 300ms;
+        }
+    </style>
+    
 </head>
 <body>
 
@@ -45,8 +72,10 @@ include "connection.php";
   </header>
 
   <div class="container">
-	<div class="text-center" style="background-color: #ccff99; margin-bottom:10px;">
-		<h3 style="font-size: 30px; ">Search Dealer</h3> 
+    <center>
+	<div style="background-color: #6d9c91; margin-bottom:10px; padding: 15px; width: 300px;">
+    <h3 style="font-size: 30px; color: white;">Search Dealer</h3> 
+      </center>
 	</div>
 	
 	<?php 
@@ -56,7 +85,7 @@ include "connection.php";
     echo "<div style=\"margin-top:40px;margin-left:200px;  \">";
 	echo "<form action='dealer.php' method='GET'>";
 echo "<label for='city' style='font-size:20px;'>Select your city name:</label>";
-echo "<select name='city' class=\"btn btn-danger dropdown-toggle\" >";
+echo "<select name='city' class=\"btn dropdown-toggle\" >";
 while($d=mysqli_fetch_array($result,MYSQLI_NUM))
 {
 
@@ -65,7 +94,7 @@ while($d=mysqli_fetch_array($result,MYSQLI_NUM))
 }
 
 echo "<div>";
-echo "<input type=\"submit\" value=\"Search\" class=\"btn btn-primary\" style=\"margin-left:50px;\">";
+echo "<input type=\"submit\" value=\"Search\" class=\"search-button\" style=\"margin-left:50px;\">";
 echo "</div>";
 echo "<br>";
 echo ""."<br>"."</form>";

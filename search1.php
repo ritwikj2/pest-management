@@ -9,32 +9,43 @@
 	<link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <title>Pest Management</title>
 	
 <style>
-.search-btn{
-	text-decoration: none;
-	background-color: #6D9C91;
-	display:inline;
-	padding: 20px;
-	text-align: center;
-	font-size: 25px;
-	color:white;
-  border-radius: 10px;
-  margin-right: 30px;
-}
-			
-.search-btn:hover
-{
-  background-color: #a1e3d4;
-  color: black;
-}
+  body {
+      font-family: 'Nunito', sans-serif;
+    }
+  .search-btn {
+    padding: 25px 30px;
+    font-size: 18px;
+    background: #fff;
+    color: #272727;
+    border-radius: 0;
+    text-transform: uppercase;
+    border: 1px solid #6d9c91;
+ }
+
+  .search-btn:hover {
+      color: #fff;
+      border-color: #fff;
+      background: #6d9c91;
+      -webkit-transition: color 300ms, background-color 300ms;
+      -moz-transition: color 300ms, background-color 300ms;
+      -o-transition: color 300ms, background-color 300ms;
+      transition: color 300ms, background-color 300ms;
+  }
+
+  .search-bg {
+    background: url(images/search-bg.jpeg) no-repeat center center fixed;
+    background-size: 100%;
+  }
 
 </style>
 </head>
 <body>
 
 <header>
-
     <div class="container">
       <div class="row">
         <nav class="navbar navbar-default" role="navigation">
@@ -61,10 +72,13 @@
     </div>
   </header>
   
-<div class="container" style="margin-top: 200px; margin-left:500px; margin-bottom: 300px;">
-		<a class="search-btn" href="search.php">Search by type</a>
-		<a class="search-btn" href="search2.php">Search by Crop</a>   
-</div>
+
+  <div class="container-fluid search-bg">
+    <div class="container" style="margin-top: 250px; margin-left:500px; margin-bottom: 300px;">
+		  <a class="search-btn" style="margin-right: 10px;" href="search.php">Search by type</a>
+		  <a class="search-btn" style="margin-left: 10px;" href="search2.php">Search by Crop</a>   
+    </div>
+  </div>
 
 	<footer>
     <div class="sub-footer">
